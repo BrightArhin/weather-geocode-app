@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const {geocode, weather} = require('./utils/forecast');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Definition for app root and views directory
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -81,6 +82,6 @@ app.get('*', (req, res)=>{
    });
 });
 
-app.listen(3000, () => {
-    console.log('The server has started')
+app.listen(port, () => {
+    console.log(`Server up on port ${port}`);
 });
